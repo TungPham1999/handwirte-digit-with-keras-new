@@ -14,8 +14,7 @@ def load_dataset():
 	# load dataset
 	# split ra thành train và val
 	(trainX, trainY), (testX, testY) = mnist.load_data()
-	trainX, trainY, valX, valY = train_test_split(trainX, trainY, test_size=0.25, random_state=42)
-	print(valX.shape)
+	trainX, valX, trainY, valY = train_test_split(trainX, trainY, test_size=0.25, random_state=42)
 	# reshape dataset to have a single channel
 	trainX = trainX.reshape((trainX.shape[0], 28, 28, 1))
 	testX = testX.reshape((testX.shape[0], 28, 28, 1))
